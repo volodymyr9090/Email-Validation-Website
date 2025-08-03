@@ -34,7 +34,7 @@ A lightweight, client-side email validator that checks format validity and domai
 ### Installation
 ```bash
 # Clone repository
-git clone https://github.com/your-username/Email-Validation-Website.git
+git clone https://github.com/volodymyr9090/Email-Validation-Website.git
 
 # Move to project directory
 cd Email-Validation-Website
