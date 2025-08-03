@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Address Validator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Email Address Validator</h1>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox">
+                    <div class="slider round"></div>
+                </label>
+                <span id="theme-label">Dark Mode</span>
+            </div>
+        </div>
+        
+        <p>Enter email addresses to validate, one per line. You can use either "email@example.com" or "Name &lt;email@example.com&gt;" format.</p>
+        <p>The validator checks email format, DNS records, and can filter role-based, disposable, or unlikely valid emails.</p>
+        
+        <textarea id="emailInput" rows="10" placeholder="Enter email addresses, one per line..."></textarea>
+        
+        <div class="options">
+            <div class="option">
+                <label class="switch">
+                    <input type="checkbox" id="allowRoles">
+                    <span class="slider"></span>
+                </label>
+                <span>Allow role-based email addresses</span>
+                <div class="option-description">Role-based email address means emails such as info@example.com and sales@example.com, that is, email inbox that is relating to a role within an organization, not a person.</div>
+            </div>
+            
+            <div class="option">
+                <label class="switch">
+                    <input type="checkbox" id="allowDisposable">
+                    <span class="slider"></span>
+                </label>
+                <span>Allow disposable email addresses</span>
+                <div class="option-description">Disposable email addresses, also known as throw-away emails and one-time-use emails, are email addresses provided by special websites that are intended to be used only for a short time.</div>
+            </div>
+            
+            <div class="option">
+                <label class="switch">
+                    <input type="checkbox" id="allowUnlikely">
+                    <span class="slider"></span>
+                </label>
+                <span>Allow unlikely valid email addresses</span>
+                <div class="option-description">Unlikely valid email addresses are email addresses such as "nothanks@example.com" and "nospam@example.com" which could be valid, but probably are not.</div>
+            </div>
+        </div>
+        
+        <button id="processButton" class="primary-button">Start Processing</button>
+        
+        <div id="progressContainer" class="progress-container" style="display: none;">
+            <div id="progressBar" class="progress-bar"></div>
+        </div>
+        
+        <div class="results">
+            <div class="result-box">
+                <h3>Valid looking email addresses</h3>
+                <textarea id="validEmails" rows="10" readonly></textarea>
+            </div>
+            
+            <div class="result-box">
+                <h3>Invalid email addresses</h3>
+                <textarea id="invalidEmails" rows="10" readonly></textarea>
+            </div>
+        </div>
+    </div>
+    
+    <script src="roleBasedEmails.js"></script>
+    <script src="disposableDomains.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
